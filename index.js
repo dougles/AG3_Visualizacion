@@ -12,6 +12,7 @@ d3.csv(
       .data([
         { year: 1991, name: 'alpha', value: 15 },
         { year: 1992, name: 'alpha', value: 20 },
+        { year: 1993, name: 'alpha', value: 27 },
       ])
       .type('bar')
       .id('name')
@@ -37,21 +38,18 @@ d3.json(
   }
 );
 
-
 d3.json(
-  'https://raw.githubusercontent.com/raul27868/07MBIG-Visualizacion-Actividades-Guiadas/master/columnas.json',
+  'https://raw.githubusercontent.com/dougles/AG3_Visualizacion/main/AG3_Datos_Caja_Bigotes.txt',
   function (data) {
-
-    var ODGCostsChart = d3plus.viz()
-    .container("#viz3")
-    .data(data)
-    .order({sort: 'asc' }) // or {sort: 'desc'}
-    .type("box")
-    .id("measure")
-    .x("provider")
-    .y("deviation")
-    .draw();
+    var ODGCostsChart = d3plus
+      .viz()
+      .container('#viz3')
+      .data(data)
+      .order({ sort: 'asc' }) // or {sort: 'desc'}
+      .type('box')
+      .id('name')
+      .x('year')
+      .y('value')
+      .draw();
   }
 );
-
-
